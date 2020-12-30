@@ -2,18 +2,33 @@
 
 namespace revisao_cshap
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-    {
-      string opcaoUsuario = obterOpcaoUsuario();
+
+    Aluno[] alunos = new Aluno[5];
+    string opcaoUsuario = obterOpcaoUsuario();
+    var indiceAluno = 0;
 
       while (opcaoUsuario.ToUpper() != "X")
       {
         switch (opcaoUsuario)
         {
           case "1":
-            //TODO: adicionar aluno
+            Console.WriteLine("Informe o nome do aluno: ");
+            Aluno aluno = new Aluno();
+            aluno.Nome = Console.ReadLine();
+
+            Console.WriteLine("Informe a nota do aluno: ");            
+            if(decimal.TryParse(Console.ReadLine(), out decimal nota)){
+                aluno.Nota = nota;
+            } else {
+                throw new ArgumentException("Valor de nota deve ser decimal");
+            }
+
+            alunos[indiceAluno] = aluno;
+            indiceAluno++;
             break;
 
           case "2":
@@ -28,6 +43,7 @@ namespace revisao_cshap
             throw new ArgumentOutOfRangeException();
         }
 
+        Console.WriteLine();
         opcaoUsuario = obterOpcaoUsuario();
       }
     }

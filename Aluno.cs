@@ -4,6 +4,6 @@ namespace revisao_cshap
     {
         public string Nome { get; set; }
 
-        public double Nota { get; set; }
+        public decimal Nota { get; set; }
     }
 }
