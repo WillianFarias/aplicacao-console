@@ -7,9 +7,9 @@ namespace revisao_cshap
     static void Main(string[] args)
     {
 
-    Aluno[] alunos = new Aluno[5];
-    string opcaoUsuario = obterOpcaoUsuario();
-    var indiceAluno = 0;
+      Aluno[] alunos = new Aluno[5];
+      string opcaoUsuario = obterOpcaoUsuario();
+      var indiceAluno = 0;
 
       while (opcaoUsuario.ToUpper() != "X")
       {
@@ -20,11 +20,14 @@ namespace revisao_cshap
             Aluno aluno = new Aluno();
             aluno.Nome = Console.ReadLine();
 
-            Console.WriteLine("Informe a nota do aluno: ");            
-            if(decimal.TryParse(Console.ReadLine(), out decimal nota)){
-                aluno.Nota = nota;
-            } else {
-                throw new ArgumentException("Valor de nota deve ser decimal");
+            Console.WriteLine("Informe a nota do aluno: ");
+            if (decimal.TryParse(Console.ReadLine(), out decimal nota))
+            {
+              aluno.Nota = nota;
+            }
+            else
+            {
+              throw new ArgumentException("Valor de nota deve ser decimal");
             }
 
             alunos[indiceAluno] = aluno;
@@ -34,15 +37,27 @@ namespace revisao_cshap
           case "2":
             foreach (var imprimirAluno in alunos)
             {
-                if (!string.IsNullOrEmpty(imprimirAluno.Nome))
-                {
-                   Console.WriteLine($"Aluno: {imprimirAluno.Nome} - Nota: {imprimirAluno.Nota}"); 
-                }
+              if (!string.IsNullOrEmpty(imprimirAluno.Nome))
+              {
+                Console.WriteLine($"Aluno: {imprimirAluno.Nome} - Nota: {imprimirAluno.Nota}");
+              }
             }
             break;
 
           case "3":
-            //TODO: calcular média geral
+            decimal media = 0;
+            var qtdAlunos = 0;
+
+            foreach (var notaAluno in alunos)
+            {
+              if (!string.IsNullOrEmpty(notaAluno.Nome))
+              {
+                  media += notaAluno.Nota;
+                  qtdAlunos++;
+              }
+            }
+
+            Console.WriteLine($"Média das notas: {media/qtdAlunos}");
             break;
 
           default:
