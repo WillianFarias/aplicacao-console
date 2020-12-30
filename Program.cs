@@ -32,7 +32,13 @@ namespace revisao_cshap
             break;
 
           case "2":
-            //TODO: listar alunos
+            foreach (var imprimirAluno in alunos)
+            {
+                if (!string.IsNullOrEmpty(imprimirAluno.Nome))
+                {
+                   Console.WriteLine($"Aluno: {imprimirAluno.Nome} - Nota: {imprimirAluno.Nota}"); 
+                }
+            }
             break;
 
           case "3":
