@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/will/Arquivos/Estudos/aplicacao-console-c#/aplicacao-console-c#.csproj",
-      "projectName": "aplicacao-console-c#",
-      "projectPath": "/media/will/Arquivos/Estudos/aplicacao-console-c#/aplicacao-console-c#.csproj",
+      "projectUniqueName": "/media/will/Arquivos/Estudos/aplicacao-console-c#/aplicacao-console.csproj",
+      "projectName": "aplicacao-console",
+      "projectPath": "/media/will/Arquivos/Estudos/aplicacao-console-c#/aplicacao-console.csproj",
       "packagesPath": "/home/will/.nuget/packages/",
       "outputPath": "/media/will/Arquivos/Estudos/aplicacao-console-c#/obj/",
       "projectStyle": "PackageReference",
